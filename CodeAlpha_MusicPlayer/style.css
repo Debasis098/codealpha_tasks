@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    width: 340px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Disc */
+.disc-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.disc {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #111 30%, #444 60%, #000 100%);
+    border: 6px solid #aaa;
+
+    /* Center music icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 50px;
+    color: #1db954;
+
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+}
+
+/* Music symbol inside disc */
+.disc::before {
+    content: "🎵";
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h2, h4 {
+    margin: 5px 0;
+}
+
+/* Controls */
+.controls {
+    margin: 10px 0;
+}
+
+.controls button {
+    font-size: 26px;
+    margin: 8px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+#playBtn {
+    background: #1db954;
+    color: white;
+}
+
+/* Sliders */
+input[type="range"] {
+    width: 100%;
+    margin: 8px 0;
+}
+
+/* Time */
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* Playlist */
+#playlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#playlist li {
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#playlist li:hover {
+    background: rgba(255,255,255,0.2);
+}
